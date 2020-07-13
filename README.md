@@ -19,3 +19,4 @@
 - Additional plan was to provide two navigation tabs in a BottomNav tab navigator. In one tab, the user would view commit details raw, as in homescreen. In second tab, user would be able to filter by name of author of each commit. Unfortunately, pressed for time.
 
 
+![Screenshot](/Screenshot.png)
