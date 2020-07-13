@@ -7,7 +7,7 @@ import CommitBox from "../../components/CommitBox";
 import { Container, TodoText } from "./styles";
 import SafeAreaView from "../../commons/safe-area-view";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -31,9 +31,10 @@ export default function HomeScreen() {
       <Header title="GitHubby" />
       <ScrollView>
         <Container>
-          <Text>
-            {loading ? "Fetching" : "Fetched"} {data.length} commits
-          </Text>
+          <TodoText style={{ color: "black", fontSize: 30, lineHeight: 40 }}>
+            {loading ? "Fetching" : "Fetched"} {loading ? "" : data.length}{" "}
+            commits
+          </TodoText>
 
           {loading && <ActivityIndicator size="small" color="black" />}
 
@@ -41,6 +42,9 @@ export default function HomeScreen() {
             <CommitBox
               key={index}
               headerText={`Commit #${index + 1}`}
+              handlePress={() =>
+                navigation.navigate("CommitScreen", { commit: a })
+              }
               children={
                 <>
                   <TodoText>{a.commit.author.name}</TodoText>
