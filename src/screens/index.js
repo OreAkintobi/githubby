@@ -1,9 +1,9 @@
 import HomeScreen from "./homescreen";
 import SplashScreen from "./splashscreen";
-import MenuScreen from "./menuscreen";
+import CommitScreen from "./commitscreen";
 
 export default {
   HomeScreen,
   SplashScreen,
-  MenuScreen,
+  CommitScreen,
 };
