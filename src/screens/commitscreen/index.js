@@ -15,7 +15,9 @@ const CommitScreen = ({ route, navigation }) => {
 
       <ScrollView>
         <Container>
-          <Text>{commit.commit.author.name}</Text>
+          <Text>Name of Author: {commit.commit.author.name}</Text>
+          <Text>Email: {commit.commit.author.email}</Text>
+          <Text>Commit Message: {commit.commit.message}</Text>
         </Container>
       </ScrollView>
     </SafeAreaView>
