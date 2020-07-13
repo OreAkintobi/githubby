@@ -3,6 +3,7 @@ import { StatusBar } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { theme } from "../../theme/types";
 import HomeIcon from "../../../assets/icons/BottomNav/HomeIcon";
+import { AntDesign } from "@expo/vector-icons";
 
 import {
   Container,
@@ -45,7 +46,8 @@ export default function Header(props) {
         ) : null}
 
         <HeaderTitleContainer style={{ marginLeft: props.headerLeft ? 0 : 20 }}>
-          <HeaderName>{title}</HeaderName>
+          <AntDesign name="github" size={24} color="black" />
+          <HeaderName> {title}</HeaderName>
         </HeaderTitleContainer>
 
         <HeaderRight style={headerRightContainerStyle}>

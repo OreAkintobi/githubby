@@ -44,13 +44,13 @@ export const HeaderTitleContainer = styled.View`
   justify-content: flex-start;
   align-items: center;
   flex-grow: 1;
+  margin-bottom: 10px;
 `;
 
 export const HeaderName = styled.Text`
-  font-size: ${theme.sizes.FONT_LARGE_SIZE + 5}px;
+  font-size: ${theme.sizes.FONT_LARGE_SIZE + 20}px;
   font-family: ${theme.fonts.FUTURA_MD_MEDIUM};
   color: ${theme.colors.DARK_TEXT};
-  text-transform: capitalize;
 `;
 
 export const BackButtonTouchable = styled.TouchableOpacity`
