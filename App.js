@@ -4,13 +4,17 @@ import { StyleSheet, Text, View } from "react-native";
 import api from "./src/api/data";
 
 export default function App() {
-  useEffect(async () => {
-    try {
-      let response = await api.get("/repos/rails/rails/commits");
-      console.log(response.data);
-    } catch (error) {
-      console.log(error.response.data);
-    }
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        let response = await api.get("/repos/rails/rails/commits");
+        console.log(response.data);
+      } catch (error) {
+        console.log(error.response.data);
+      }
+    };
+
+    getData();
   }, []);
 
   return (
