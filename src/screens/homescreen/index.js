@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, ScrollView } from "react-native";
+import Header from "../../commons/header";
 import api from "../../api/data";
 import { ActivityIndicator } from "react-native";
 import CommitBox from "../../components/CommitBox";
@@ -27,9 +28,12 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView>
+      <Header title="GitHubby" />
       <ScrollView>
         <Container>
-          <Text>{loading ? "Fetching" : "Fetched"} commits</Text>
+          <Text>
+            {loading ? "Fetching" : "Fetched"} {data.length} commits
+          </Text>
 
           {loading && <ActivityIndicator size="small" color="black" />}
 
