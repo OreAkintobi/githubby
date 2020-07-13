@@ -1,35 +1,16 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import api from "./src/api/data";
+import React, { useState } from "react";
+import { StoreProvider } from "./src/store";
+import AppLoading from "./src/components/AppLoading";
+import AppRouter from "./src";
 
 export default function App() {
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        let response = await api.get("/repos/rails/rails/commits");
-        console.log(response.data);
-      } catch (error) {
-        console.log(error.response.data);
-      }
-    };
+  const [isAppReady, setIsAppReady] = useState(false);
 
-    getData();
-  }, []);
-
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  return isAppReady ? (
+    <StoreProvider>
+      <AppRouter />
+    </StoreProvider>
+  ) : (
+    <AppLoading setIsAppReady={setIsAppReady} />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
