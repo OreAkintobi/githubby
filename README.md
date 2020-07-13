@@ -1,4 +1,4 @@
-# githubby
+# githubby (Screenshot is at bottom of this readme)
 
 ### To run app:
 - cd into app folder
