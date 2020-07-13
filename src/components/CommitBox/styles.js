@@ -4,7 +4,7 @@ import { theme } from "../../theme/types";
 export const Container = styled.TouchableOpacity`
   margin-top: 40px;
   margin-left: 10px;
-  width: 30%;
+  width: 80%;
   height: 200px;
   flex-direction: column;
   justify-content: space-evenly;
